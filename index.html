@@ -2,27 +2,32 @@
 <head>
 <meta charset="UTF-8">
 <title>Сайт web-студії "Web-DECO"</title>
- function send()
-
-(
-
-var valid
-
-= true;
-
-var elems = document.forms [0].elements; for(var i=0; i<document.forms [0].length; i++) {
-
-if( elems [i].getAttribute('type') == 'text' 1/
-
-elems [i].getAttribute('type') == 'password' II elems [i].getAttribute('type')=='email') {
-
-if(elems [i].value==') ( elems [i].style.border = 2px solid red':
-
-valid = false;
-
-if(!valid) {
-
-alert ('Заповніть всі поля)return false
+<script type="text/javascript">
+function send()
+{  var valid = true;
+ var elems = document.forms[0].elements;
+ for(var i=0; i<document.forms[0].length; i++){
+  if( elems[i].getAttribute('type') == 'text' ||
+   elems[i].getAttribute('type') == 'password' ||
+   elems[i].getAttribute('type') == 'email' ) {
+   if(elems[i].value == '') {
+    elems[i].style.border = '2px solid red';
+    valid = false;
+   }
+  }
+ } 
+ if(!valid) {
+  alert('Заповніть всі поля !!!');
+  return false;
+ } else 
+ { var r = /^\w+@\w+\.\w{2,4}$/i;
+  if (!r.test(elems[2].value)) {
+   alert('Заповніть вірно E-Mail !!');
+   return false;
+     } else return true;
+ }
+}
+ </script>
  <style>
 .shadowtext {
 text-shadow: 1px 3px 2px white, 0 0 1em red;
